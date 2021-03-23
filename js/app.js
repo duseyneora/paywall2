@@ -29,3 +29,19 @@ languageSelect.addEventListener('click', e => {
         selectMenu.classList.toggle('active');
         arrow.classList.toggle('flip');
 });
+
+
+
+
+const languageLabel = document.querySelector('.language .selected-language-copy')
+const languages = document.querySelectorAll('.select-menu li');
+const languagesUL = document.querySelector('.select-menu ul')
+
+
+languagesUL.addEventListener('click', e => {
+    languages.forEach((item) => {
+        if (e.target === item) {
+            languageLabel.textContent = e.target.textContent;
+        }
+    })
+})
