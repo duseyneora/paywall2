@@ -76,19 +76,24 @@ main .controls {
     &:nth-child(3) .menu-type:first-child {
         margin-bottom: 10px;
     }
+    &.language-select {
+        cursor: pointer;
+    }
     .menu-type {
         @include size(35px, 100%);
         border-radius: 3px;
         border: 1px solid $gray;
-        padding: 0 10px;
+        padding: 0 0 0 10px;
         @include flex(row, nowrap, flex-start, center);
-        &.country {
+        &.language {
             cursor: pointer;
+            position: relative;
+            padding: 0 10px 0 10px;
         }
         & .label {
             margin-right: 15px;
         }
-        & .selected-country-copy {
+        & .selected-language-copy {
             margin-right: auto;
             color: darken($gray, 50%);
         }
@@ -99,6 +104,8 @@ main .controls {
             outline: none;
             color: darken($gray, 35%);
             font-size: 1.1em;
+            background: rgb(244, 246, 248);
+            padding-left: 10px;
         }
     }
 }
@@ -123,6 +130,10 @@ main .button-container {
         &:hover {
             background: lighten($blue, 10%);
         }
+        &.disabled {
+            opacity: .3;
+            pointer-events: none;
+        }
     }
 }
 
@@ -139,8 +150,52 @@ main a {
 }
 
 
+.select-menu {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 15px 10px;
+    border-radius: 5px;
+    z-index: 10;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+    border: 1px solid $gray;
+    opacity: 0;
+    transition: .5s;
+    &.active {
+        opacity: 1;
+        top: 110%;
+        pointer-events: auto;
+    }
+    & ul {
+        @include flex(column, nowrap, space-evenly, center);
+        width: 100%;
+        & li {
+            list-style: none;
+            width: 100%;
+            padding: 5px;
+            transition: .2s;
+            border-radius: 5px;
+            &:hover {
+                background: $gray;
+                color: lighten($gray, 25%);
+                padding-left: 15px;
+            }
 
+        }
+    }
+}
 
+.no-touch {
+    pointer-events: none;
+}
+i {
+    transition: .4s;
+}
+.flip {
+    transform: rotate(-180deg);
+}
 
 
 

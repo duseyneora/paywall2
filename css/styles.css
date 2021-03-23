@@ -72,25 +72,30 @@ main .controls {
 main .controls:nth-child(3) .menu-type:first-child {
   margin-bottom: 10px;
 }
+main .controls.language-select {
+  cursor: pointer;
+}
 main .controls .menu-type {
   height: 35px;
   width: 100%;
   border-radius: 3px;
   border: 1px solid #d7dee6;
-  padding: 0 10px;
+  padding: 0 0 0 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
 }
-main .controls .menu-type.country {
+main .controls .menu-type.language {
   cursor: pointer;
+  position: relative;
+  padding: 0 10px 0 10px;
 }
 main .controls .menu-type .label {
   margin-right: 15px;
 }
-main .controls .menu-type .selected-country-copy {
+main .controls .menu-type .selected-language-copy {
   margin-right: auto;
   color: #495e75;
 }
@@ -101,6 +106,8 @@ main .controls .menu-type input {
   outline: none;
   color: #6983a1;
   font-size: 1.1em;
+  background: #f4f6f8;
+  padding-left: 10px;
 }
 
 main .button-container {
@@ -131,6 +138,10 @@ main .button-container button {
 main .button-container button:hover {
   background: #1d769b;
 }
+main .button-container button.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
 
 main a {
   margin-top: 55px;
@@ -142,6 +153,58 @@ main a {
 }
 main a:hover {
   color: #354456;
+}
+
+.select-menu {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 15px 10px;
+  border-radius: 5px;
+  z-index: 10;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid #d7dee6;
+  opacity: 0;
+  transition: 0.5s;
+}
+.select-menu.active {
+  opacity: 1;
+  top: 110%;
+  pointer-events: auto;
+}
+.select-menu ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.select-menu ul li {
+  list-style: none;
+  width: 100%;
+  padding: 5px;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+.select-menu ul li:hover {
+  background: #d7dee6;
+  color: white;
+  padding-left: 15px;
+}
+
+.no-touch {
+  pointer-events: none;
+}
+
+i {
+  transition: 0.4s;
+}
+
+.flip {
+  transform: rotate(-180deg);
 }
 
 @keyframes showLogo {
