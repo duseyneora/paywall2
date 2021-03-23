@@ -24,13 +24,14 @@ body main.bg-container {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 @media (min-width: 500px) {
   body main.bg-container {
     height: 95vh;
     width: 95vw;
     border-radius: 15px;
+    align-items: center;
   }
 }
 

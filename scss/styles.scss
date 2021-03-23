@@ -34,10 +34,11 @@ body {
         @include size(100vh, 100vw);
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         background-image: linear-gradient(to bottom, #C3E29C, #ADE2B5);
-        @include flex(row, nowrap, center, center);
+        @include flex(row, nowrap, center, flex-start);
         @media (min-width: 500px) {
             @include size(95vh, 95vw);
             border-radius: 15px;
+            align-items: center;
         }
     }
 }
