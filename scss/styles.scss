@@ -179,6 +179,7 @@ main a {
             border-radius: 5px;
             &:hover {
                 background: $gray;
+                background: rgb(130, 150, 153);
                 color: lighten($gray, 25%);
                 padding-left: 15px;
             }

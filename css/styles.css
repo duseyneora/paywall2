@@ -191,6 +191,7 @@ main a:hover {
 }
 .select-menu ul li:hover {
   background: #d7dee6;
+  background: #829699;
   color: white;
   padding-left: 15px;
 }
