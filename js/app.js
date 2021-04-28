@@ -7,7 +7,7 @@ emailField.addEventListener('keyup', e => {
         continueButton.classList.remove('disabled')
     } else {
         continueButton.classList.add('disabled');
-    }
+    };
 });
 
 passField.addEventListener('keyup', e => {
