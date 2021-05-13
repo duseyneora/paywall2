@@ -92,6 +92,9 @@ main .controls .menu-type.language {
 main .controls .menu-type .label {
   margin-right: 15px;
 }
+main .controls .menu-type .label.last {
+  min-width: 100px;
+}
 main .controls .menu-type .selected-language-copy {
   margin-right: auto;
   color: #495e75;

@@ -89,6 +89,9 @@ main .controls {
         }
         & .label {
             margin-right: 15px;
+            &.last {
+                min-width: 100px;
+            }
         }
         & .selected-language-copy {
             margin-right: auto;
